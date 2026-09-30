@@ -47,15 +47,16 @@ function Trees({ reducedDetail }) {
   </group>;
 }
 
-function CameraFit() {
+function CameraFit({ resetKey }) {
   const { camera, size } = useThree();
   useLayoutEffect(() => {
     // Frame the district by the limiting viewport dimension, including portrait phones.
-    const distance = size.width < 500 ? 26 : 22;
+    const aspect = size.width / size.height;
+    const distance = Math.max(19, 18 / Math.min(aspect, 1.1));
     camera.position.set(distance * 0.25, distance * 0.73, distance * 0.85);
     camera.lookAt(0, 0.6, 0);
     camera.updateProjectionMatrix();
-  }, [camera, size.width, size.height]);
+  }, [camera, size.width, size.height, resetKey]);
   return null;
 }
 
@@ -66,7 +67,7 @@ class SceneBoundary extends Component {
   render() { return this.state.failed ? <div className="scene-fallback" role="status">Peta 3D tidak tersedia. Kamu tetap bisa menjelajahi semua zona melalui City index.</div> : this.props.children; }
 }
 
-export default function CityScene({ exploredZones, onSelect }) {
+export default function CityScene({ exploredZones, onSelect, resetKey = 0 }) {
   const labelPortal = useRef();
   const [mobile, setMobile] = useState(false);
   const [slow, setSlow] = useState(false);
@@ -93,7 +94,7 @@ export default function CityScene({ exploredZones, onSelect }) {
       <Trees reducedDetail={reducedDetail} />
       <group><Part shape="cylinder" args={[1.15, 1.3, 0.25, 24]} position={[0, 0.13, 0]} /><Part shape="ico" args={[0.48, 1]} position={[0, 0.92, 0]} color="#ee765f" /><Part shape="torus" args={[0.78, 0.035, 6, 32]} rotation={[Math.PI / 2, 0, 0]} position={[0, 0.7, 0]} color="#fff5e7" /></group>
       {zones.map((zone) => <ZoneAsset key={zone.id} zone={zone} explored={exploredZones.includes(zone.id)} onSelect={onSelect} onPointerOver={setHoveredZone} onPointerOut={() => setHoveredZone(null)} reducedDetail={reducedDetail} reducedMotion={reducedMotion} labelPortal={labelPortal} />)}
-      <CameraFit /><SceneDiagnostics /><OrbitControls enablePan={false} minDistance={15} maxDistance={34} minPolarAngle={Math.PI / 5} maxPolarAngle={Math.PI / 2.8} target={[0, 0.6, 0]} />
+      <CameraFit resetKey={resetKey} /><SceneDiagnostics /><OrbitControls enablePan={false} minDistance={15} maxDistance={65} minPolarAngle={Math.PI / 5} maxPolarAngle={Math.PI / 2.8} target={[0, 0.6, 0]} />
     </Canvas></SceneBoundary>
     {hoveredZone && <div className="scene-tooltip" role="status"><b>{hoveredZone.assetName}</b><span>{hoveredZone.tooltip}</span></div>}
   </>;

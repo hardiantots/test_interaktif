@@ -1,5 +1,7 @@
 export default function InterfaceIcon({ name = 'city', size = 20, ...props }) {
   const paths = {
+    maximize: <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" />,
+    minimize: <path d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5" />,
     city: <><path d="M3 21V9h6V3h6v10h6v8H3Z" /><path d="M6 12v1m0 3v1m6-11v1m0 3v1m0 3v1m0 3v1m6-3v1" /></>,
     book: <><path d="M12 5v16m0-16C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z" /></>,
     compass: <><circle cx="12" cy="12" r="9" /><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z" /></>,

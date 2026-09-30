@@ -1,17 +1,13 @@
-﻿"use client";
+"use client";
 
-import dynamic from "next/dynamic";
+
 import { useState } from "react";
 import { zones } from "../components/scene/scene-data";
-import ZoneModal from "../components/ZoneModal";
+import MapExplorer from "../components/MapExplorer";
 import Icon from "../components/InterfaceIcon";
 
-const CityScene = dynamic(() => import("../components/scene/CityScene"), {
-  ssr: false,
-  loading: () => <div className="scene-fallback" role="status">Menyiapkan kota pembelajaran…</div>,
-});
-
 export default function Home() {
+  const [quizAnswers, setQuizAnswers] = useState({});
   const [activeZone, setActiveZone] = useState(null);
   const [exploredZones, setExploredZones] = useState([]);
   const [ethics, setEthics] = useState({ biasFree: false, attributed: false, aiLabeled: false });
@@ -44,7 +40,7 @@ export default function Home() {
             <p className="eyebrow">SEBUAH PERJALANAN BELAJAR TENTANG AI</p>
             <h1>Kota masa depan.<br /><em>Pelajaran untuk hari ini.</em></h1>
             <p className="intro-description">Kenali bagaimana AI hadir di sekitar kita. Jelajahi kotanya,<br className="desktop-break" /> temukan manfaatnya, dan pikirkan dampaknya bagi manusia.</p>
-            <div className="intro-actions"><a className="primary-button" href="#explore">Mulai menjelajah <Icon name="arrow" size={17} /></a><span>4 zona <i /> 12 menit untuk mulai memahami</span></div>
+            <div className="intro-actions"><a className="primary-button" href="#explore">Mulai menjelajah <Icon name="arrow" size={17} /></a><span>4 zona <i /> 28 soal untuk memperdalam pemahaman</span></div>
           </section>
 
           <section className="learning-callout"><span>✦</span><p><strong>Tidak perlu jadi ahli teknologi.</strong> Mulai dari satu pertanyaan: bagaimana AI bisa membantu, dan apa yang perlu kita jaga?</p></section>
@@ -52,12 +48,19 @@ export default function Home() {
           <section className="exploration-section" id="explore" aria-label="Zona eksplorasi AI">
             <div className="section-heading"><div><Icon name="compass" size={20} /><h2>Peta pembelajaran</h2></div><span>Pilih objek atau daftar zona untuk belajar</span></div>
             <div className="city-grid">
-              <div className="map-card"><div className="map-toolbar"><span><span className="online-dot" /> Future AI City</span><span className="map-view-tag">Peta interaktif</span></div><div className="city-map scene-shell"><CityScene exploredZones={exploredZones} onSelect={explore} /><div className="map-caption">Geser untuk memutar <span>·</span> Klik untuk menjelajah</div></div><div className="map-legend">{zones.map((zone) => <span key={zone.id}><i style={{ background: zone.color }} />{zone.label}</span>)}</div></div>
+              <MapExplorer exploredZones={exploredZones} onSelect={explore} activeZone={activeZone} onClose={() => setActiveZone(null)} answers={quizAnswers[activeZone?.id] || []}
+                onAnswer={(index, choice) => setQuizAnswers((current) => {
+                  const previous = current[activeZone.id] || [];
+                  if (previous[index] !== undefined) return current;
+                  const next = [...previous]; next[index] = choice;
+                  return { ...current, [activeZone.id]: next };
+                })}
+                onReset={() => setQuizAnswers((current) => ({ ...current, [activeZone.id]: [] }))} />
               <aside className="control-panel" aria-label="Daftar zona">
                 <div className="panel-heading"><div><p className="eyebrow">PERJALANANMU</p><h3>Selangkah lebih paham.</h3></div><span className="progress-value" aria-live="polite">{exploredZones.length}/4</span></div>
                 <div className="progress-track"><span style={{ width: `${exploredZones.length * 25}%` }} /></div><p className="progress-caption">{exploredZones.length === 4 ? 'Semua zona sudah kamu jelajahi. Hebat!' : 'Setiap zona membuka sudut pandang baru.'}</p>
                 <div className="zone-list">{zones.map((zone) => <button key={zone.id} className={`zone-row ${activeZone?.id === zone.id ? "selected" : ""}`} onClick={() => explore(zone)}><span className={`zone-icon ${zone.tone}`}><Icon name={zone.id} /></span><span className="zone-row-copy"><b>{zone.label}</b><small>{zone.title}</small></span><span className={`arrow ${exploredZones.includes(zone.id) ? 'visited' : ''}`}><Icon name={exploredZones.includes(zone.id) ? 'check' : 'arrow'} size={16} /></span></button>)}</div>
-                <div className="panel-note"><Icon name="book" size={18} /><p>Setiap zona berisi penjelasan, sumber tepercaya, dan kuis singkat.</p></div>
+                <div className="panel-note"><Icon name="book" size={18} /><p>Setiap zona berisi penjelasan, sumber tepercaya, dan 7 soal latihan.</p></div>
               </aside>
             </div>
           </section>
@@ -68,7 +71,7 @@ export default function Home() {
           </div>
           <footer className="footer-bar"><span><Icon name="city" size={16} /> Future AI City</span><span>Dibuat untuk belajar, bertanya, dan memahami.</span><span>Catatan belajar / 01</span></footer>
         </div>
-        {activeZone && <ZoneModal key={activeZone.id} zone={activeZone} onClose={() => setActiveZone(null)} />}
+
       </main>
     </div>
   );
