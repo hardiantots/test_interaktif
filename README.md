@@ -37,6 +37,10 @@ Tes memakai Chrome headless dengan software WebGL. Ukuran layar: 1440×1080, 102
 
 Semua model dibuat dari kode; tidak ada unduhan GLB/HDR atau generator online saat runtime. Model procedural juga merupakan fallback dasar, sehingga tidak ada fetch model yang dapat gagal. Bila WebGL tidak tersedia, panel DOM tetap dapat digunakan. UI mengadaptasi gaya Notion yang terang dan editorial. Inter dilayani dari aplikasi melalui next/font setelah build; Georgia memakai font sistem. Tidak ada request Google Fonts dari browser. Lihat DESIGN.md untuk referensi dan token desain.
 
-Progress menghitung zona yang dibuka, bukan kelulusan kuis, dan hanya berlaku selama sesi halaman. Jawaban kuis memberi umpan balik tanpa mengubah progress eksplorasi.
+Progres eksplorasi, jawaban kuis, jumlah kunjungan zona, dan checklist etika disimpan otomatis di localStorage browser. Refresh dan menutup pop-up tidak menghapusnya. Browser berbeda mempunyai progres terpisah; tab dalam browser yang sama berbagi progres. Belum ada akun atau sinkronisasi antarperangkat. Browser bersama berarti progres bersama; mode privat atau penghapusan data browser dapat menghapus progres. Jika penyimpanan ditolak, aplikasi tetap berjalan dengan pemberitahuan dan progres sementara.
+
+Setiap bidang menyediakan 3 ilustrasi SVG orisinal dan 7 soal (total 12 gambar dan 28 soal). Navigasi gambar manual. Jawaban dikunci per percobaan; tombol ulangi tersedia setelah 7 soal dijawab. Pop-up memakai header dan footer tetap dengan satu area gulir, navigasi materi/latihan, keyboard Escape, serta animasi singkat yang mengikuti prefers-reduced-motion. Peta mendukung fullscreen native dan perluasan dalam jendela sebagai fallback.
+
+Untuk pemeriksaan tambahan jalankan `node scripts/reliability.mjs` saat server aktif. Pemeriksaan 24 request HTTP lokal bersamaan bukan jaminan kapasitas hosting untuk 24 perangkat. Produksi memerlukan hosting yang dapat diakses siswa; alamat 127.0.0.1 hanya untuk komputer ini. Ukur jaringan sekolah, kapasitas hosting, dan perangkat siswa sebelum kelas.
 
 Materi merupakan ringkasan edukatif. Sumber jurnal dan institusi ditautkan langsung pada tiap zona; skenario buatan diberi label. Panduan lembaga AS dipakai untuk menjelaskan konsep, bukan disajikan sebagai aturan Indonesia.

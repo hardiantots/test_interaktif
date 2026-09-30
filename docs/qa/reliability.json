@@ -1,0 +1,13 @@
+{
+  "concurrentLocalHttpRequests": 24,
+  "statuses": [
+    200
+  ],
+  "elapsedMs": 7691,
+  "checks": [
+    "independent browser progress",
+    "same-browser tab synchronization",
+    "blocked storage remains usable"
+  ],
+  "limitation": "Local HTTP burst, not a 24-device WebGL or production capacity benchmark."
+}

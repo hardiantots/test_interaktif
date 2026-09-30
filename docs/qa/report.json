@@ -11,8 +11,8 @@
           "triangles": 1324,
           "materials": 14,
           "target": {
-            "x": 650.0411414386297,
-            "y": 829.8311124864576
+            "x": 644.5853615557896,
+            "y": 821.4019940404062
           },
           "bounds": [
             4.099999904632568,
@@ -24,8 +24,8 @@
           "triangles": 1736,
           "materials": 26,
           "target": {
-            "x": 786.569102988674,
-            "y": 833.6590718147887
+            "x": 802.035051383422,
+            "y": 826.6571020884853
           },
           "bounds": [
             4.099999904632568,
@@ -37,8 +37,8 @@
           "triangles": 952,
           "materials": 15,
           "target": {
-            "x": 609.6229612134764,
-            "y": 917.5638168242169
+            "x": 595.8700247607308,
+            "y": 922.6272217632368
           },
           "bounds": [
             4.099999904632568,
@@ -50,8 +50,8 @@
           "triangles": 940,
           "materials": 23,
           "target": {
-            "x": 768.1356661304214,
-            "y": 955.8401075918388
+            "x": 784.6901700718097,
+            "y": 969.4213846577306
           },
           "bounds": [
             4.099999904632568,
@@ -65,7 +65,7 @@
       "dpr": 1
     },
     "errors": [],
-    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, all 28 questions, 12 illustrations, locked answers, quiz reset, reload persistence including sparse answers, fullscreen and fallback, no overflow"
   },
   {
     "name": "laptop",
@@ -79,8 +79,8 @@
           "triangles": 1324,
           "materials": 14,
           "target": {
-            "x": 565.580657885774,
-            "y": 643.4734166527771
+            "x": 559.9849862110664,
+            "y": 634.8409874773397
           },
           "bounds": [
             4.099999904632568,
@@ -92,8 +92,8 @@
           "triangles": 1736,
           "materials": 26,
           "target": {
-            "x": 705.6701911861935,
-            "y": 647.5203732146019
+            "x": 721.4718475727404,
+            "y": 640.230841885626
           },
           "bounds": [
             4.099999904632568,
@@ -105,8 +105,8 @@
           "triangles": 952,
           "materials": 15,
           "target": {
-            "x": 524.126114065104,
-            "y": 733.4556775120174
+            "x": 510.0205382161341,
+            "y": 738.66173385973
           },
           "bounds": [
             4.099999904632568,
@@ -118,8 +118,8 @@
           "triangles": 940,
           "materials": 23,
           "target": {
-            "x": 686.7032473132529,
-            "y": 772.7134116326552
+            "x": 703.6822257146766,
+            "y": 786.655747084852
           },
           "bounds": [
             4.099999904632568,
@@ -133,7 +133,7 @@
       "dpr": 1
     },
     "errors": [],
-    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, all 28 questions, 12 illustrations, locked answers, quiz reset, reload persistence including sparse answers, fullscreen and fallback, no overflow"
   },
   {
     "name": "mobile",
@@ -147,8 +147,8 @@
           "triangles": 812,
           "materials": 14,
           "target": {
-            "x": 165.84802884989608,
-            "y": 905.6327604800936
+            "x": 155.93667526232136,
+            "y": 608.693642011139
           },
           "bounds": [
             4.099999904632568,
@@ -160,8 +160,8 @@
           "triangles": 1384,
           "materials": 26,
           "target": {
-            "x": 271.4867577828777,
-            "y": 909.1831645787498
+            "x": 299.25626472080717,
+            "y": 613.477137798493
           },
           "bounds": [
             4.099999904632568,
@@ -173,8 +173,8 @@
           "triangles": 888,
           "materials": 15,
           "target": {
-            "x": 135.92982458137982,
-            "y": 973.4547821792695
+            "x": 111.59322766681902,
+            "y": 700.8345544255104
           },
           "bounds": [
             4.099999904632568,
@@ -186,8 +186,8 @@
           "triangles": 780,
           "materials": 23,
           "target": {
-            "x": 254.82137427097817,
-            "y": 1001.4688055019046
+            "x": 283.4679753217755,
+            "y": 743.4292411628062
           },
           "bounds": [
             4.099999904632568,
@@ -201,6 +201,6 @@
       "dpr": 1
     },
     "errors": [],
-    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, all 28 questions, 12 illustrations, locked answers, quiz reset, reload persistence including sparse answers, fullscreen and fallback, no overflow"
   }
 ]

@@ -32,10 +32,15 @@ export default function MapExplorer({ exploredZones, onSelect, activeZone, onClo
     document.body.style.overflow = 'hidden';
     const hidden = [];
     // Inert only sibling branches: the scene and its nested learning dialog remain usable.
-    let branch = container.current;
+    const containerElement = container.current;
+    let branch = containerElement;
     while (branch && branch !== document.body) {
       for (const sibling of branch.parentElement?.children || []) {
-        if (sibling !== branch) { hidden.push([sibling, sibling.inert]); sibling.inert = true; }
+        if (sibling !== branch) {
+          const hadInert = sibling.hasAttribute('inert');
+          hidden.push([sibling, hadInert]);
+          sibling.setAttribute('inert', '');
+        }
       }
       branch = branch.parentElement;
     }
@@ -54,7 +59,9 @@ export default function MapExplorer({ exploredZones, onSelect, activeZone, onClo
     document.addEventListener('keydown', keys);
     return () => {
       document.body.style.overflow = oldOverflow;
-      hidden.forEach(([element, previous]) => { element.inert = previous; });
+      hidden.forEach(([element, hadInert]) => {
+        if (!hadInert) element.removeAttribute('inert');
+      });
       document.removeEventListener('keydown', keys);
       button?.focus({ preventScroll: true });
     };
