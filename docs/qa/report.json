@@ -1,0 +1,206 @@
+[
+  {
+    "name": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1080
+    },
+    "metrics": {
+      "zones": {
+        "health": {
+          "triangles": 1324,
+          "materials": 14,
+          "target": {
+            "x": 650.0411414386297,
+            "y": 829.8311124864576
+          },
+          "bounds": [
+            4.099999904632568,
+            2.709999949634075,
+            4.099999904632568
+          ]
+        },
+        "transport": {
+          "triangles": 1736,
+          "materials": 26,
+          "target": {
+            "x": 786.5476519120778,
+            "y": 833.6215514924545
+          },
+          "bounds": [
+            4.099999904632568,
+            2.289999996647239,
+            4.099999904632568
+          ]
+        },
+        "industry": {
+          "triangles": 952,
+          "materials": 15,
+          "target": {
+            "x": 609.6229612134764,
+            "y": 917.5638168242169
+          },
+          "bounds": [
+            4.099999904632568,
+            2.478734943541957,
+            4.099999904632568
+          ]
+        },
+        "education": {
+          "triangles": 940,
+          "materials": 23,
+          "target": {
+            "x": 768.1356661304214,
+            "y": 955.8401075918388
+          },
+          "bounds": [
+            4.099999904632568,
+            2.861863130995313,
+            4.099999904632568
+          ]
+        }
+      },
+      "drawCalls": 172,
+      "triangles": 12504,
+      "dpr": 1
+    },
+    "errors": [],
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+  },
+  {
+    "name": "laptop",
+    "viewport": {
+      "width": 1024,
+      "height": 900
+    },
+    "metrics": {
+      "zones": {
+        "health": {
+          "triangles": 1324,
+          "materials": 14,
+          "target": {
+            "x": 565.580657885774,
+            "y": 643.4734166527771
+          },
+          "bounds": [
+            4.099999904632568,
+            2.709999949634075,
+            4.099999904632568
+          ]
+        },
+        "transport": {
+          "triangles": 1736,
+          "materials": 26,
+          "target": {
+            "x": 705.7007793096902,
+            "y": 647.5928649071959
+          },
+          "bounds": [
+            4.099999904632568,
+            2.289999996647239,
+            4.099999904632568
+          ]
+        },
+        "industry": {
+          "triangles": 952,
+          "materials": 15,
+          "target": {
+            "x": 524.126114065104,
+            "y": 733.4556775120174
+          },
+          "bounds": [
+            4.099999904632568,
+            2.478734943541957,
+            4.099999904632568
+          ]
+        },
+        "education": {
+          "triangles": 940,
+          "materials": 23,
+          "target": {
+            "x": 686.7032473132529,
+            "y": 772.7134116326552
+          },
+          "bounds": [
+            4.099999904632568,
+            2.861863130995313,
+            4.099999904632568
+          ]
+        }
+      },
+      "drawCalls": 172,
+      "triangles": 12504,
+      "dpr": 1
+    },
+    "errors": [],
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+  },
+  {
+    "name": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "metrics": {
+      "zones": {
+        "health": {
+          "triangles": 812,
+          "materials": 14,
+          "target": {
+            "x": 165.84802884989608,
+            "y": 905.6327604800936
+          },
+          "bounds": [
+            4.099999904632568,
+            2.709999949634075,
+            4.099999904632568
+          ]
+        },
+        "transport": {
+          "triangles": 1384,
+          "materials": 26,
+          "target": {
+            "x": 271.48822527937,
+            "y": 909.1875971199522
+          },
+          "bounds": [
+            4.099999904632568,
+            2.289999996647239,
+            4.099999904632568
+          ]
+        },
+        "industry": {
+          "triangles": 888,
+          "materials": 15,
+          "target": {
+            "x": 135.92982458137982,
+            "y": 973.4547821792695
+          },
+          "bounds": [
+            4.099999904632568,
+            2.478734943541957,
+            4.099999904632568
+          ]
+        },
+        "education": {
+          "triangles": 780,
+          "materials": 23,
+          "target": {
+            "x": 254.82137427097817,
+            "y": 1001.4688055019046
+          },
+          "bounds": [
+            4.099999904632568,
+            2.861863130995313,
+            4.099999904632568
+          ]
+        }
+      },
+      "drawCalls": 86,
+      "triangles": 4812,
+      "dpr": 1
+    },
+    "errors": [],
+    "checks": "mesh hover/click, correct modal, row parity, unique progress, close button/Escape/backdrop, ethics, citations, wrong/correct quiz answers, no overflow"
+  }
+]
